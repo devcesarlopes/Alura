@@ -67,19 +67,50 @@ receiptsOverdue = 30COPY CODE
 ```
 Let's follow the Python pattern in this course, which is Snake_Case!
 
-## Operations (Types)
+## Operations
+### (Types)
 We cannot perform addition, subtraction, etc. math operations involving a string. To solve the problem, we can use the int() function, which converts a string containing a number, into an integer.
+ex:
+```
+print(1+"2")
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+```
+```
+print(1+int("2"))
+3
+```
+### integer division
+The // operator is also called integer division and always returns the truncated integer value (no rounding).
+```
+>>> print(3//2)
+1
+```
+
+## round()
+Round() is a built-in function available with python. It will return you a float number that will be rounded to the decimal places which are given as input.
+
+If the decimal places to be rounded are not specified, it is considered as 0, and it will round to the nearest integer.
+```
+round(float_num, num_of_decimals)
+```
+float_num: the float number to be rounded.
+num_of_decimals: (optional) The number of decimals to be considered while rounding. It is optional, and if not specified, it defaults to 0, and the rounding is done to the nearest integer.
+ex: 
+```
+>>> round(2.55567,4)
+2.5557
+```
 
 ## String
 ### String Concatenation
-#### Form 1
+#### simple concatenation
 ```
 rodada = 1
 total_de_tentativas = 5
 print("Tentativa", rodada, "de", total_de_tentativas)
 >>> Tentativa 1 de 5
 ```
-#### Form 2 .format()
+#### .format()
 ```
 rodada = 1
 total_de_tentativas = 5
@@ -92,6 +123,14 @@ rodada = 1
 total_de_tentativas = 5
 print("Tentativa {1} de {0}".format(rodada, total_de_tentativas))
 >>> Tentativa 5 de 1
+```
+#### f-strings
+Starting with Python version 3.6, a new feature has been added to perform string interpolation. This feature is called f-strings or formatted string literals.
+This feature works as follows. Let's imagine that we have a variable name:
+```
+>>> name = 'Matheus'
+>>> print(f'My name is {name}')
+My name is Matheus
 ```
 
 ## .format()
@@ -173,7 +212,6 @@ range(start, stop, step)
 >>> import numpy as np
 >>> arr = np.array([[1, 2, 3], 
                     [4, 5, 6]])
-
 >>> for x in arr:
         for y in x:
             print(y)
@@ -228,4 +266,21 @@ Python supports to have an else statement associated with a loop statements.
 12
 15
 finish loop
+```
+## Random numbers
+To generate a random number between 0 - 1.0:
+```
+>>> import random
+>>> random.random()
+0.6022965518496559
+```
+To generate a random float between a - b:
+```
+>>> random.uniform(a, b)
+3.1800146073117523
+```
+To generate a random float between a - b:
+```
+>>> random.randint(0, 100+1)
+25
 ```
