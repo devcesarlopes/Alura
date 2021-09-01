@@ -284,3 +284,18 @@ To generate a random float between a - b:
 >>> random.randint(0, 100+1)
 25
 ```
+
+## Importing Settings
+When we run a file directly in Python, it internally creates a variable and fills it. And through this variable we can make a query, because if it is filled, it means that the file was executed directly, but if the variable is not filled, then it means that the file was only imported.
+
+This variable is ```__name__```, and it is filled with the value ```__main__``` if the file is executed directly. Let's then do if to check if it is filled or not:
+```
+import random
+
+def jogar():
+    # código omitido
+
+if (__name__ == "__main__"):
+    jogar()
+```
+In this case if this file is imported it will execute nothing. But, if it is executed directly it's going to execute the function ```jogar()```

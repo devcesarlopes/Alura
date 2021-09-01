@@ -1,1 +1,3 @@
-print(round(2.55567,4))
+frutas = ["maçã", "banana", "laranja", "melancia"]
+lista = [fruta.upper() for fruta in frutas]
+print(lista)
