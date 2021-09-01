@@ -139,7 +139,7 @@ Dictionaries are used to store data values in key:value pairs, like Hashmaps.
 
 ## File Manipulation
 Just like C python can manipulate files.
-To open a file, Python has a built-in open function. It takes two parameters: the first is the name of the file to be opened, and the second parameter is the way we want to work with this file, whether we want to read or write. The mode is passed through a string: "w" for writing and "r" for reading.
+To open a file, Python has a built-in open function. It takes two parameters: the first is the name of the file to be opened, and the second parameter is the way we want to work with this file, whether we want to read or write. The mode is passed through a string: "w" for writing, "r" for reading and "a" for append when oppening again.
 ### open
 ```
 >>> arquivo = open("palavras.txt", "w")
@@ -155,4 +155,36 @@ To open a file, Python has a built-in open function. It takes two parameters: th
 Quando estamos trabalhando com arquivos, devemos nos preocupar em fechá-lo. Assim como abrimos um arquivo, devemos fechá-los, chamando a função close:
 ```
 >>> arquivo.close()
+```
+### read
+Since we open the file in read mode, the write function doesn't work. To read the entire file, we use the read function:
+```
+>>> arquivo.read()
+'banana\nmelancia\nmorango\nmanga\n'
+```
+But if we run the function again:
+```
+>>> arquivo.read()
+''
+```
+We are returned an empty string. Why?
+
+The file is like a stream of lines, starting at the beginning of the file, as if it were the pointer. It goes down and reading the file, after reading everything, it is positioned at the end of the file, so when we call the read() function again, there is no more content, as it has all been read.
+
+In other words, to read the file again, we must close it and open it again.
+
+### Reading line by line from file
+But we don't want to read the entire contents of the file, we want to read it line by line. As we've already seen, a file is a stream of lines, a sequence of lines, so since it's a sequence, we can do a for on it:
+```
+>>> file = open("words.txt", "r")
+>>> for line in file:
+... print(line)
+...
+banana
+
+watermelon
+
+Strawberry
+
+mango
 ```
