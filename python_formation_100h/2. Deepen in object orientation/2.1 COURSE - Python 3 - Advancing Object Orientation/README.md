@@ -75,6 +75,9 @@ game of thrones - 2020 - 5
 
 ## python data model
 these are the special methods:
+<br/>
 <img src="./python_data_model.png">
+<br/>
 And what are they for:
+<br/>
 <img src="./python_data_model_2.png">
