@@ -46,6 +46,10 @@ class Serie(Programa):
         self.temporada = temporadas
 ```
 
+## super()
+super is a function that calls all the attributes and methods from the mother's class. It's possible to not call super if you don't need any changes in the child's class.
+But, In case you use ```__init__``` without calling the super class, the child ```__init__``` will overwrite the mother's ```__init__``` and the child class won't have access anymore to the mother's attributes and methods.
+
 ## class methods (métodos de classe)
 These are methods declared with @classmethod. When we create a class method, we have access to the class's attributes. Similarly with class attributes, we can access these methods from within instance methods, from ```__class__```.
 ```
