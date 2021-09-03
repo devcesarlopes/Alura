@@ -71,7 +71,18 @@ lists are a flexible kind of sequence, we can delete or add elements, and it all
 >>> len(valores)
 5
 ```
-
+### enumerate()
+to get the element as well as the position of the element.
+```
+lista = [32, 49, 85, 79, 100]
+for index, age in enumerate(lista):
+        print(index, age)
+0 32
+1 49
+2 85
+3 79
+4 100
+```
 ### List Comprehension
 easier way to insert elements in a list.
 This works!
